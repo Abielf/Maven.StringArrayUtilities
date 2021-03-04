@@ -1,5 +1,9 @@
 package com.zipcodewilmington;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by leon on 1/29/18.
  */
@@ -189,7 +193,30 @@ public class StringArrayUtils {
      * @return array of Strings with each consecutive duplicate occurrence concatenated as a single string in an array of Strings
      */ // TODO
     public static String[] packConsecutiveDuplicates(String[] array) {
-        return null;
+        List<String> packedArray = new ArrayList<String>();
+        //ArrayList<String> packedArray = new ArrayList<String>();
+        int counter=0;
+        int compare =1;
+        String packed="";
+        while (counter<array.length){
+            packed=packed.concat(array[counter]);
+
+            while(compare!=array.length&&(array[counter].equals(array[compare]))){
+
+                packed=packed.concat(array[compare]);
+                compare++;
+            }
+            packedArray.add(packed);
+            packed="";
+            counter=compare;
+            compare++;
+        }
+        String newArray[]= new String[packedArray.size()];
+        for(int i=0; i<=packedArray.size()-1;i++){
+            newArray[i]=packedArray.get(i);
+        }
+        return newArray;
+
     }
 
 

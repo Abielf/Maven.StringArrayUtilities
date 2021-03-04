@@ -9,6 +9,8 @@ public class GetConsecutiveDuplicatesTest {
 
 
     @SuppressWarnings("deprecation")
+
+    //Hey, I fixed the tests. The expected and actual arguments were in the wrong spot.
     @Test
     public void testRemoveConsecutiveDuplicates1() {
         String[] array = {"aba", "aba", "baa", "bab", "bba", "bba", "bba", "bba", "bbb", "bbb"};
